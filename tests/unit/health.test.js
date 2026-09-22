@@ -11,6 +11,10 @@ describe('health payload', () => {
     expect(JSON.stringify(healthPayload())).toBe('{"status":"ok"}');
   });
 
+  test('deliberate failure for safety gate', () => {
+    expect(true).toBe(false);
+  });
+
   test('returns a fresh object on every call', () => {
     const first = healthPayload();
     const second = healthPayload();
